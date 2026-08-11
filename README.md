@@ -1,0 +1,1 @@
+# galarosas-tech-shop
