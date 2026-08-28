@@ -19,8 +19,45 @@
   <main>
     <section>
       <h2>Get in Touch</h2>
-      <p>Have questions about compatibility, product availability, or custom setups? Reach out through any of the channels below:</p>
+      <p>Have questions about compatibility, product availability, or custom setups? Reach out through the form below or via our direct contact channels.</p>
 
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your details</legend>
+
+          <p>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" required>
+          </p>
+
+          <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required>
+          </p>
+
+          <p>
+            <label for="subject">Subject</label><br>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="product-inquiry">Product Question</option>
+              <option value="order-status">Order Status</option>
+              <option value="custom-build">Custom Setup Inquiry</option>
+              <option value="other">Something Else</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" cols="40" required></textarea>
+          </p>
+
+          <button type="submit">Send message</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <h2>Direct Contact Details</h2>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:johnmarco.galarosa@tup.edu.ph">johnmarco.galarosa@tup.edu.ph</a></li>
         <li><strong>Phone:</strong> +63 928 734 3324</li>
