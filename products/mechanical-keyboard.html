@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,12 +32,12 @@
       </section>
 
       <section>
-        <h2>Specifications</h2>
-        <table>
+        <h2>Technical Specifications</h2>
+        <table border="1">
           <thead>
             <tr>
+              <th scope="col">Feature</th>
               <th scope="col">Specification</th>
-              <th scope="col">Details</th>
             </tr>
           </thead>
           <tbody>
@@ -48,16 +50,16 @@
               <td>75% Compact (84 Keys)</td>
             </tr>
             <tr>
-              <th scope="row">Keycap Material</th>
-              <td>Double-shot PBT</td>
-            </tr>
-            <tr>
               <th scope="row">Connectivity</th>
               <td>Detachable USB Type-C to Type-A Braided Cable</td>
             </tr>
             <tr>
               <th scope="row">Backlighting</th>
-              <td>Per-key customizable RGB (16 modes)</td>
+              <td>Per-Key Dynamic RGB with 16 Preset Modes</td>
+            </tr>
+            <tr>
+              <th scope="row">Keycap Material</th>
+              <td>Double-Shot PBT Keycaps</td>
             </tr>
             <tr>
               <th scope="row">Compatibility</th>
@@ -65,6 +67,63 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- Order Enquiry Form -->
+      <section>
+        <h2>Order Enquiry</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Order Details</legend>
+
+            <!-- Quantity (Number Input) -->
+            <p>
+              <label for="quantity">Quantity:</label><br>
+              <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+            </p>
+
+            <!-- Delivery Method (Radio Buttons in Fieldset) -->
+            <fieldset>
+              <legend>Delivery Method</legend>
+              <p>
+                <input type="radio" id="delivery-standard" name="delivery" value="standard" checked>
+                <label for="delivery-standard">Standard Shipping (3–5 business days)</label>
+              </p>
+              <p>
+                <input type="radio" id="delivery-express" name="delivery" value="express">
+                <label for="delivery-express">Express Same-Day Courier (Metro Manila)</label>
+              </p>
+              <p>
+                <input type="radio" id="delivery-pickup" name="delivery" value="pickup">
+                <label for="delivery-pickup">Campus / Store Pickup</label>
+              </p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Optional Add-ons</legend>
+              <p>
+                <input type="checkbox" id="extra-keycaps" name="extras" value="custom-keycaps">
+                <label for="extra-keycaps">Extra Keycap Puller &amp; Switch Set (+₱150.00)</label>
+              </p>
+              <p>
+                <input type="checkbox" id="extra-wrap" name="extras" value="gift-wrapping">
+                <label for="extra-wrap">Gift Wrapping &amp; Custom Note (+₱50.00)</label>
+              </p>
+              <p>
+                <input type="checkbox" id="extra-warranty" name="extras" value="extended-warranty">
+                <label for="extra-warranty">1-Year Extended Warranty (+₱300.00)</label>
+              </p>
+            </fieldset>
+
+            <!-- Contact Email -->
+            <p>
+              <label for="buyer-email">Your Email Address:</label><br>
+              <input type="email" id="buyer-email" name="email" required>
+            </p>
+
+            <button type="submit">Submit enquiry</button>
+          </fieldset>
+        </form>
       </section>
     </article>
   </main>
