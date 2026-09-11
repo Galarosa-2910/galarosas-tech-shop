@@ -126,7 +126,7 @@ footer {
   border: 1px solid var(--border-color);
   border-left: 5px solid var(--brand);
   margin-bottom: 0;             
-  display: flex;                /* Optional: keeps card content balanced */
+  display: flex;                /* Optional: keeps card content balanced */ 
   flex-direction: column;
 }
 
