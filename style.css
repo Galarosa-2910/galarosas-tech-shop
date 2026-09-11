@@ -1,0 +1,159 @@
+/* 1. VARIABLES */
+:root {
+  --brand-color: #10b981;       /* Terminal emerald for focal points and links */
+  --brand-hover: #059669;       /* Deep green for button hover */
+  --dark-ink: #f3f4f6;          /* Clean light silver text */
+  --muted-grey: #9ca3af;        /* Neutral muted grey for secondary copy */
+  --light-bg: #121212;          /* True deep charcoal background */
+  --surface-card: #1e1e1e;      /* Raised charcoal grey for cards and header */
+  --border-color: #2e2e2e;      /* Low-contrast divider borders */
+}
+
+/* 2. BASE STYLES */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-ink);
+  background-color: var(--light-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. LAYOUT REGIONS */
+header {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 1rem 0;
+  color: var(--brand-color);
+}
+
+/* Navigation Bar */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark-ink);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--brand-color);
+}
+
+/* Main Content Area */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  color: var(--muted-grey);
+  font-size: 0.9rem;
+}
+
+/* 4. COMPONENTS */
+/* Product Cards */
+article {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+article h3 {
+  margin-top: 0;
+  color: var(--dark-ink);
+}
+
+article p {
+  color: var(--muted-grey);
+}
+
+article a {
+  display: inline-block;
+  color: var(--brand-color);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+/* Tables & Forms */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  margin: 1.5rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  background-color: var(--light-bg);
+  color: var(--dark-ink);
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+button[type="submit"] {
+  background-color: var(--brand-color);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
