@@ -32,28 +32,32 @@ img {
   border-radius: 6px;
 }
 
-/* 3. LAYOUT REGIONS */
-header {
+/* 3. LAYOUT REGIONS (Flexbox Header & Navigation)*/
+header,
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--surface-card);
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem;
   border-bottom: 1px solid var(--border-color);
-  text-align: center;
 }
 
-header h1 {
-  margin: 0 0 1rem 0;
+header h1,
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
   color: var(--brand-color);
 }
 
+/* Nav Flex Container */
 nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;            
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 0.75rem;
 }
 
 nav a {
@@ -73,6 +77,28 @@ main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1.5rem;
+}
+
+/* Centered Banner Component */
+.hero-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 180px;    
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.hero-banner p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--dark-ink);
+  max-width: 600px;
 }
 
 footer {
