@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIABLES
-   ========================================================================== */
+/* 1. VARIABLES */
 :root {
   --brand-color: #10b981;       
   --brand-hover: #059669;      
@@ -12,9 +10,7 @@
   --white: #ffffff;
 }
 
-/* ==========================================================================
-   2. BASE STYLES
-   ========================================================================== */
+/* 2. BASE STYLES */
 *,
 *::before,
 *::after {
@@ -36,9 +32,7 @@ img {
   border-radius: 6px;
 }
 
-/* ==========================================================================
-   3. LAYOUT REGIONS
-   ========================================================================== */
+/* 3. LAYOUT REGIONS */
 header {
   background-color: var(--surface-card);
   padding: 1.5rem 2rem;
@@ -91,22 +85,24 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   4. PRODUCT CARDS COMPONENT
-   ========================================================================== */
-.product-card,
-article {
+/* 4. PRODUCT CARDS COMPONENT */
+.product-card {
   background-color: var(--surface-card);
-  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 24px;
   margin-bottom: 24px;
+
+  /* 1. Subtle outline around the entire card */
+  border: 1px solid var(--border-color);
+
+  /* 2. Overrides the left side with your brand accent stripe */
+  border-left: 5px solid var(--brand-color);
 }
 
 .product-card .product-title {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--white);
 }
 
@@ -123,7 +119,7 @@ article {
 
 .product-card a {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   color: var(--brand-color);
   font-weight: 600;
   text-decoration: none;
@@ -152,9 +148,7 @@ th {
   color: var(--white);
 }
 
-/* ==========================================================================
-   5. FORM STYLING & ACCESSIBILITY
-   ========================================================================== */
+/* 5. FORM STYLING & ACCESSIBILITY */
 fieldset {
   background-color: var(--surface-card);
   border: 1px solid var(--border-color);
