@@ -1,15 +1,20 @@
-/* 1. VARIABLES */
+/* ==========================================================================
+   1. VARIABLES
+   ========================================================================== */
 :root {
-  --brand-color: #10b981;       /* Terminal emerald for focal points and links */
-  --brand-hover: #059669;       /* Deep green for button hover */
-  --dark-ink: #f3f4f6;          /* Clean light silver text */
-  --muted-grey: #9ca3af;        /* Neutral muted grey for secondary copy */
-  --light-bg: #121212;          /* True deep charcoal background */
-  --surface-card: #1e1e1e;      /* Raised charcoal grey for cards and header */
-  --border-color: #2e2e2e;      /* Low-contrast divider borders */
+  --brand-color: #10b981;       
+  --brand-hover: #059669;      
+  --dark-ink: #f3f4f6;          
+  --muted-grey: #9ca3af;        
+  --light-bg: #121212;          
+  --surface-card: #1e1e1e;      
+  --border-color: #2e2e2e;      
+  --white: #ffffff;
 }
 
-/* 2. BASE STYLES */
+/* ==========================================================================
+   2. BASE STYLES
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -28,11 +33,14 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 6px;
 }
 
-/* 3. LAYOUT REGIONS */
+/* ==========================================================================
+   3. LAYOUT REGIONS
+   ========================================================================== */
 header {
-  background-color: var(--white);
+  background-color: var(--surface-card);
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
   text-align: center;
@@ -43,7 +51,6 @@ header h1 {
   color: var(--brand-color);
 }
 
-/* Navigation Bar */
 nav ul {
   list-style: none;
   padding: 0;
@@ -68,16 +75,14 @@ nav a:focus {
   color: var(--brand-color);
 }
 
-/* Main Content Area */
 main {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
-/* Footer */
 footer {
-  background-color: var(--white);
+  background-color: var(--surface-card);
   border-top: 1px solid var(--border-color);
   text-align: center;
   padding: 1.5rem;
@@ -86,42 +91,53 @@ footer {
   font-size: 0.9rem;
 }
 
-/* 4. COMPONENTS */
-/* Product Cards */
+/* ==========================================================================
+   4. PRODUCT CARDS COMPONENT
+   ========================================================================== */
+.product-card,
 article {
-  background-color: var(--white);
+  background-color: var(--surface-card);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
-article h3 {
+.product-card .product-title {
   margin-top: 0;
-  color: var(--dark-ink);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--white);
 }
 
-article p {
+.product-card .price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-color);
+  margin-top: 0;
+}
+
+.product-card p {
   color: var(--muted-grey);
 }
 
-article a {
+.product-card a {
   display: inline-block;
+  margin-top: 1rem;
   color: var(--brand-color);
   font-weight: 600;
   text-decoration: none;
-  margin-top: 0.5rem;
 }
 
-article a:hover {
+.product-card a:hover {
   text-decoration: underline;
 }
 
-/* Tables & Forms */
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--white);
+  background-color: var(--surface-card);
   margin: 1.5rem 0;
 }
 
@@ -132,28 +148,80 @@ th, td {
 }
 
 th {
-  background-color: var(--light-bg);
+  background-color: #252525;
+  color: var(--white);
+}
+
+/* ==========================================================================
+   5. FORM STYLING & ACCESSIBILITY
+   ========================================================================== */
+fieldset {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 8px;
+  font-size: 1.1rem;
+  color: var(--brand-color);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: 600;
   color: var(--dark-ink);
 }
 
-fieldset {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--light-bg);
   border: 1px solid var(--border-color);
-  background-color: var(--white);
   border-radius: 6px;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
+  color: var(--dark-ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Distinct outline focus rings for keyboard navigation */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid var(--brand-color);
+  outline-offset: 2px;
+}
+
+/* Radio & Checkbox Specific Spacing */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  accent-color: var(--brand-color);
 }
 
 button[type="submit"] {
   background-color: var(--brand-color);
-  color: var(--white);
+  color: #052e16;
   border: none;
-  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  padding: 12px 24px;
   font-size: 1rem;
-  border-radius: 4px;
+  font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 button[type="submit"]:hover {
-  opacity: 0.9;
+  background-color: var(--brand-hover);
+  color: var(--white);
 }
