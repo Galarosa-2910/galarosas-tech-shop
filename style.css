@@ -1,16 +1,20 @@
-/* 1. VARIABLES */
+/* ==========================================================================
+   1. VARIABLES (Obsidian Emerald Theme)
+   ========================================================================== */
 :root {
-  --brand-color: #10b981;       
-  --brand-hover: #059669;      
-  --dark-ink: #f3f4f6;          
-  --muted-grey: #9ca3af;        
-  --light-bg: #121212;          
-  --surface-card: #1e1e1e;      
-  --border-color: #2e2e2e;      
+  --brand: #10b981;             /* Emerald accent */
+  --brand-hover: #059669;       /* Deep emerald for hover */
+  --dark-ink: #f3f4f6;          /* Crisp readable silver-white text */
+  --muted-grey: #9ca3af;        /* Slate secondary text */
+  --light-bg: #121212;          /* Main page background */
+  --surface-card: #1e1e1e;      /* Card & header surface */
+  --border-color: #2e2e2e;      /* Border divider color */
   --white: #ffffff;
 }
 
-/* 2. BASE STYLES */
+/* ==========================================================================
+   2. BASE RESETS & PREVENT OVERFLOW
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -19,10 +23,12 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: var(--dark-ink);
   background-color: var(--light-bg);
+  overflow-x: hidden;           /* Prevent accidental horizontal scrolling */
 }
 
 img {
@@ -32,16 +38,17 @@ img {
   border-radius: 6px;
 }
 
-/* 3. LAYOUT REGIONS (Page Grid Skeleton & Flex Components) */
-
-/* Overall Page Skeleton */
+/* ==========================================================================
+   3. MOBILE-FIRST PAGE SKELETON (Default: 1 Column)
+   ========================================================================== */
 .page {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 100%;
   grid-template-areas:
-    "masthead masthead"
-    "side     main"
-    "foot     foot";
+    "masthead"
+    "main"
+    "side"                      /* Sidebar ordered under main content on mobile */
+    "foot";
   gap: 16px;
   min-height: 100vh;
 }
@@ -50,20 +57,82 @@ header.site-header {
   grid-area: masthead; 
 }
 
-aside.sidebar { 
-  grid-area: side; 
-}
-
 main { 
   grid-area: main; 
-  max-width: 100%;
-  margin: 0;
-  padding: 0 1.5rem 1.5rem 0;
+  padding: 0 1rem;
+  min-width: 0;                 /* Prevents grid blowout from child elements */
+}
+
+aside.sidebar { 
+  grid-area: side; 
+  margin: 0 1rem;
 }
 
 footer { 
   grid-area: foot; 
-  margin-top: 0;
+}
+
+/* Header & Nav: Mobile Stacking */
+.site-header {
+  display: flex;
+  flex-direction: column;       /* Stack shop name over navigation on mobile */
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface-card);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--brand);
+}
+
+.site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  color: var(--dark-ink);
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  transition: color 0.2s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus {
+  color: var(--brand);
+}
+
+/* Centered Banner (Lesson 6.4: Centered Horizontally & Vertically) */
+.hero-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 140px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+}
+
+.hero-banner p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--dark-ink);
+  max-width: 600px;
 }
 
 /* Sidebar Component */
@@ -71,25 +140,24 @@ footer {
   background-color: var(--surface-card);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 20px;
-  margin-left: 1.5rem;
+  padding: 16px;
 }
 
 .sidebar h2 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--brand);
   margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.25rem 0;
 }
 
 .sidebar li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .sidebar a {
@@ -106,106 +174,48 @@ footer {
   color: var(--muted-grey);
   font-size: 0.9rem;
   line-height: 1.5;
-  margin: 0;
-}
-
-/* Existing Header Flexbox */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--surface-card);
-  padding: 1.25rem 2rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.site-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--brand);
-}
-
-.site-header nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.site-header nav a {
-  text-decoration: none;
-  color: var(--dark-ink);
-  font-weight: 600;
-  padding: 0.5rem 0.75rem;
-  transition: color 0.2s ease;
-}
-
-.site-header nav a:hover,
-.site-header nav a:focus {
-  color: var(--brand);
-}
-
-/* Existing Hero Banner Flexbox Centering */
-.hero-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 160px;
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-}
-
-.hero-banner p {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--dark-ink);
-  max-width: 650px;
+  margin: 0 0 1rem 0;
 }
 
 footer {
   background-color: var(--surface-card);
   border-top: 1px solid var(--border-color);
   text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
+  padding: 1.25rem;
   color: var(--muted-grey);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-/* 4. PRODUCT GRID & CARDS COMPONENT */
+/* ==========================================================================
+   4. PRODUCT GRID & CARDS
+   ========================================================================== */
 .product-grid {
   display: flex;
-  flex-wrap: wrap;              /* Allows cards to wrap into rows */
-  gap: 24px;                    
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .product-card {
-  flex: 1 1 240px;              
+  flex: 1 1 240px;              /* Auto wraps onto single column on mobile */
   background-color: var(--surface-card);
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px;
   border: 1px solid var(--border-color);
   border-left: 5px solid var(--brand);
-  margin-bottom: 0;             
-  display: flex;                /* Optional: keeps card content balanced */ 
+  display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .product-card .product-title {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   color: var(--white);
 }
 
 .product-card .price {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--brand);
   margin-top: 0;
@@ -217,15 +227,14 @@ footer {
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .product-card a {
   display: inline-block;
-  margin-top: auto;             
+  margin-top: auto;
   color: var(--brand);
   font-weight: 600;
   text-decoration: none;
@@ -235,16 +244,26 @@ footer {
   text-decoration: underline;
 }
 
-/* Tables */
+/* Detail page article */
+article {
+  background-color: var(--surface-card);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  min-width: 0;
+}
+
+/* Table container to prevent mobile page stretching */
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--surface-card);
   margin: 1.5rem 0;
+  font-size: 0.9rem;
 }
 
 th, td {
-  padding: 0.75rem;
+  padding: 0.6rem;
   border: 1px solid var(--border-color);
   text-align: left;
 }
@@ -254,20 +273,22 @@ th {
   color: var(--white);
 }
 
-/* 5. FORM STYLING & ACCESSIBILITY */
+/* ==========================================================================
+   5. FORM STYLING & ACCESSIBILITY
+   ========================================================================== */
 fieldset {
   background-color: var(--surface-card);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
+  padding: 16px;
+  margin-bottom: 20px;
 }
 
 legend {
   font-weight: 700;
-  padding: 0 8px;
-  font-size: 1.1rem;
-  color: var(--brand-color);
+  padding: 0 6px;
+  font-size: 1.05rem;
+  color: var(--brand);
 }
 
 label {
@@ -292,36 +313,74 @@ textarea {
   font-size: 1rem;
 }
 
-/* Distinct outline focus rings for keyboard navigation */
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline: 3px solid var(--brand-color);
+  outline: 3px solid var(--brand);
   outline-offset: 2px;
 }
 
-/* Radio & Checkbox Specific Spacing */
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 8px;
-  accent-color: var(--brand-color);
-}
-
 button[type="submit"] {
-  background-color: var(--brand-color);
+  background-color: var(--brand);
   color: #052e16;
   border: none;
   border-radius: 6px;
-  padding: 12px 24px;
+  padding: 12px 20px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+  width: 100%;                  /* Full width button on phone */
   transition: background-color 0.2s ease;
 }
 
 button[type="submit"]:hover {
   background-color: var(--brand-hover);
   color: var(--white);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE ENHANCEMENTS (Tablet & Desktop: min-width: 700px)
+   ========================================================================== */
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+    gap: 24px;
+  }
+
+  .site-header {
+    flex-direction: row;        /* Restores horizontal shop name and nav */
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .site-header nav ul {
+    gap: 20px;
+  }
+
+  aside.sidebar {
+    margin-left: 2rem;
+    margin-right: 0;
+    padding: 20px;
+  }
+
+  main {
+    padding: 0 2rem 2rem 0;
+  }
+
+  .product-grid {
+    gap: 24px;
+  }
+
+  button[type="submit"] {
+    width: auto;                /* Natural button width on larger screens */
+  }
 }
