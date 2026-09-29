@@ -8,130 +8,147 @@
 </head>
 <body>
 
-  <header>
-    <h1>Galarosa's Tech Shop</h1>
-    <nav>
+  <div class="page">
+    <header class="site-header">
+      <h1>Galarosa's Tech Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Availability</h2>
+      <p>In Stock (Ships within 24 hours)</p>
+
+      <h2>Warranty &amp; Returns</h2>
+      <p>7-day replacement warranty and 1-year limited local service warranty.</p>
+
+      <h2>Delivery Options</h2>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+        <li>Standard Metro Manila (1–3 days)</li>
+        <li>Provincial Courier (3–5 days)</li>
+        <li>Campus / Store Pickup</li>
       </ul>
-    </nav>
-  </header>
+    </aside>
 
-  <main>
-    <article>
-      <h1>RACK ELEZ Mechanical Keyboard</h1>
+    <main>
+      <article>
+        <h1>RACK ELEZ Mechanical Keyboard</h1>
 
-      <img src="../images/keyboard1.jpg" alt="Custom mechanical keyboard with RGB lighting" width="600">
+        <img src="../images/keyboard1.jpg" alt="Custom mechanical keyboard with RGB lighting" width="600">
 
-      <p><strong>Price:</strong> ₱2,250.00</p>
+        <p><strong>Price:</strong> ₱2,250.00</p>
 
-      <section>
-        <h2>Product Overview</h2>
-        <p>The RACK ELEZ Mechanical Keyboard delivers a tactile, highly responsive typing experience tailored for coding, long writing sessions, and gaming. Built with a solid chassis and durable mechanical switches, it combines tactile feedback with low acoustic distraction. Customizable per-key RGB backlighting ensures clear visibility in any lighting environment, while the detachable Type-C braided cable makes it easy to pack into a backpack for campus or work setups.</p>
-      </section>
+        <section>
+          <h2>Product Overview</h2>
+          <p>The RACK ELEZ Mechanical Keyboard delivers a tactile, highly responsive typing experience tailored for coding, long writing sessions, and gaming. Built with a solid chassis and durable mechanical switches, it combines tactile feedback with low acoustic distraction. Customizable per-key RGB backlighting ensures clear visibility in any lighting environment, while the detachable Type-C braided cable makes it easy to pack into a backpack for campus or work setups.</p>
+        </section>
 
-      <section>
-        <h2>Technical Specifications</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th scope="col">Feature</th>
-              <th scope="col">Specification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Switch Type</th>
-              <td>Tactile Brown Mechanical Switches</td>
-            </tr>
-            <tr>
-              <th scope="row">Layout</th>
-              <td>75% Compact (84 Keys)</td>
-            </tr>
-            <tr>
-              <th scope="row">Connectivity</th>
-              <td>Detachable USB Type-C to Type-A Braided Cable</td>
-            </tr>
-            <tr>
-              <th scope="row">Backlighting</th>
-              <td>Per-Key Dynamic RGB with 16 Preset Modes</td>
-            </tr>
-            <tr>
-              <th scope="row">Keycap Material</th>
-              <td>Double-Shot PBT Keycaps</td>
-            </tr>
-            <tr>
-              <th scope="row">Compatibility</th>
-              <td>Windows, macOS, and Linux</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <section>
+          <h2>Technical Specifications</h2>
+          <table border="1">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Switch Type</th>
+                <td>Tactile Brown Mechanical Switches</td>
+              </tr>
+              <tr>
+                <th scope="row">Layout</th>
+                <td>75% Compact (84 Keys)</td>
+              </tr>
+              <tr>
+                <th scope="row">Connectivity</th>
+                <td>Detachable USB Type-C to Type-A Braided Cable</td>
+              </tr>
+              <tr>
+                <th scope="row">Backlighting</th>
+                <td>Per-Key Dynamic RGB with 16 Preset Modes</td>
+              </tr>
+              <tr>
+                <th scope="row">Keycap Material</th>
+                <td>Double-Shot PBT Keycaps</td>
+              </tr>
+              <tr>
+                <th scope="row">Compatibility</th>
+                <td>Windows, macOS, and Linux</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <!-- Order Enquiry Form -->
-      <section>
-        <h2>Order Enquiry</h2>
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Order Details</legend>
-
-            <!-- Quantity (Number Input) -->
-            <p>
-              <label for="quantity">Quantity:</label><br>
-              <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
-            </p>
-
-            <!-- Delivery Method (Radio Buttons in Fieldset) -->
+        <!-- Order Enquiry Form -->
+        <section>
+          <h2>Order Enquiry</h2>
+          <form action="#" method="post">
             <fieldset>
-              <legend>Delivery Method</legend>
+              <legend>Order Details</legend>
+
+              <!-- Quantity (Number Input) -->
               <p>
-                <input type="radio" id="delivery-standard" name="delivery" value="standard" checked>
-                <label for="delivery-standard">Standard Shipping (3–5 business days)</label>
+                <label for="quantity">Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
               </p>
+
+              <!-- Delivery Method (Radio Buttons in Fieldset) -->
+              <fieldset>
+                <legend>Delivery Method</legend>
+                <p>
+                  <input type="radio" id="delivery-standard" name="delivery" value="standard" checked>
+                  <label for="delivery-standard">Standard Shipping (3–5 business days)</label>
+                </p>
+                <p>
+                  <input type="radio" id="delivery-express" name="delivery" value="express">
+                  <label for="delivery-express">Express Same-Day Courier (Metro Manila)</label>
+                </p>
+                <p>
+                  <input type="radio" id="delivery-pickup" name="delivery" value="pickup">
+                  <label for="delivery-pickup">Campus / Store Pickup</label>
+                </p>
+              </fieldset>
+
+              <fieldset>
+                <legend>Optional Add-ons</legend>
+                <p>
+                  <input type="checkbox" id="extra-keycaps" name="extras" value="custom-keycaps">
+                  <label for="extra-keycaps">Extra Keycap Puller &amp; Switch Set (+₱150.00)</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="extra-wrap" name="extras" value="gift-wrapping">
+                  <label for="extra-wrap">Gift Wrapping &amp; Custom Note (+₱50.00)</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="extra-warranty" name="extras" value="extended-warranty">
+                  <label for="extra-warranty">1-Year Extended Warranty (+₱300.00)</label>
+                </p>
+              </fieldset>
+
+              <!-- Contact Email -->
               <p>
-                <input type="radio" id="delivery-express" name="delivery" value="express">
-                <label for="delivery-express">Express Same-Day Courier (Metro Manila)</label>
+                <label for="buyer-email">Your Email Address:</label><br>
+                <input type="email" id="buyer-email" name="email" required>
               </p>
-              <p>
-                <input type="radio" id="delivery-pickup" name="delivery" value="pickup">
-                <label for="delivery-pickup">Campus / Store Pickup</label>
-              </p>
+
+              <button type="submit">Submit enquiry</button>
             </fieldset>
+          </form>
+        </section>
+      </article>
+    </main>
 
-            <fieldset>
-              <legend>Optional Add-ons</legend>
-              <p>
-                <input type="checkbox" id="extra-keycaps" name="extras" value="custom-keycaps">
-                <label for="extra-keycaps">Extra Keycap Puller &amp; Switch Set (+₱150.00)</label>
-              </p>
-              <p>
-                <input type="checkbox" id="extra-wrap" name="extras" value="gift-wrapping">
-                <label for="extra-wrap">Gift Wrapping &amp; Custom Note (+₱50.00)</label>
-              </p>
-              <p>
-                <input type="checkbox" id="extra-warranty" name="extras" value="extended-warranty">
-                <label for="extra-warranty">1-Year Extended Warranty (+₱300.00)</label>
-              </p>
-            </fieldset>
-
-            <!-- Contact Email -->
-            <p>
-              <label for="buyer-email">Your Email Address:</label><br>
-              <input type="email" id="buyer-email" name="email" required>
-            </p>
-
-            <button type="submit">Submit enquiry</button>
-          </fieldset>
-        </form>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Galarosa's Tech Shop. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2026 Galarosa's Tech Shop. All rights reserved.</p>
+    </footer>
+  </div>
 
 </body>
 </html>
