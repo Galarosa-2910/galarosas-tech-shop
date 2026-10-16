@@ -10,7 +10,7 @@
 
   <div class="page">
     <header class="site-header">
-      <h1>Galarosa's Tech Shop</h1>
+      <h1 id="shop-title">Galarosa's Tech Shop</h1>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -86,20 +86,17 @@
           </table>
         </section>
 
-        <!-- Order Enquiry Form -->
         <section>
           <h2>Order Enquiry</h2>
           <form action="#" method="post">
             <fieldset>
               <legend>Order Details</legend>
 
-              <!-- Quantity (Number Input) -->
               <p>
                 <label for="quantity">Quantity:</label><br>
                 <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
               </p>
 
-              <!-- Delivery Method (Radio Buttons in Fieldset) -->
               <fieldset>
                 <legend>Delivery Method</legend>
                 <p>
@@ -132,7 +129,6 @@
                 </p>
               </fieldset>
 
-              <!-- Contact Email -->
               <p>
                 <label for="buyer-email">Your Email Address:</label><br>
                 <input type="email" id="buyer-email" name="email" required>
@@ -146,9 +142,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Galarosa's Tech Shop. All rights reserved.</p>
+      <p id="copyright-notice">&copy; Galarosa's Tech Shop. All rights reserved.</p>
     </footer>
   </div>
 
+  <script src="../script.js"></script>
 </body>
 </html>
