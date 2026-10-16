@@ -10,7 +10,7 @@
 
   <div class="page">
     <header class="site-header">
-      <h1>Galarosa's Tech Shop</h1>
+      <h1 id="shop-title">Galarosa's Tech Shop</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -21,6 +21,12 @@
     </header>
 
     <aside class="sidebar">
+      <h2>Inventory Snapshot</h2>
+      <ul>
+        <li>Products Listed: <strong id="product-count">0</strong></li>
+        <li>Catalog Value: <strong id="catalog-total">₱0.00</strong></li>
+      </ul>
+
       <h2>Categories</h2>
       <ul>
         <li><a href="index.html">Keyboards</a></li>
@@ -68,9 +74,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Galarosa's Tech Shop. All rights reserved.</p>
+      <p id="copyright-notice">&copy; Galarosa's Tech Shop. All rights reserved.</p>
     </footer>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
